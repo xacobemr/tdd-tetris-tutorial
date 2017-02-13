@@ -8,6 +8,7 @@ public class Board {
 
     private final int rows;
     private final int columns;
+    private Block block;
 
     public Board(int rows, int columns) {
         this.rows = rows;
@@ -26,7 +27,17 @@ public class Board {
     }
     
     public Boolean hasFalling() {
-    	return false;
+    	if(this.block == null){
+    		return false;
+    	}else{
+    		return true;
+    	}
     }
+    
+    public void drop(Block block){
+    	this.block = block;
+    }
+    
+    
     
 }
