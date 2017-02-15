@@ -9,25 +9,40 @@ public class Board {
     private final int rows;
     private final int columns;
     private Block block;
+    private int tickCont = 0;
 
     public Board(int rows, int columns) {
         this.rows = rows;
         this.columns = columns;
     }
     
+    //Construye el tablero
     public String toString() {
         String s = "";
+        
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
-            	if(row == 0 && col == 1 && this.block != null){
-            		s += "X";
-            	}else{
-            		s += ".";
-            	}
+            	s += printearCaracter(col, row, block, tickCont);
             }
             s += "\n";
         }
         return s;
+    }
+    
+    //Escoge que carácter concatenar
+    private String printearCaracter(int col, int row, Block block, int tickCont){
+    	if(row == 0 && col == 1 && this.block != null && tickCont == 0){
+    		return "X";
+    	}else if(row == 1 && col == 1 && tickCont == 1){
+    		return "X";
+    	}else{
+    		return ".";
+    	}
+    }
+    
+    //Aumenta el contador de tick
+    public void tick(){
+    	this.tickCont ++;
     }
     
     public Boolean hasFalling() {
