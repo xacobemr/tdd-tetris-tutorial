@@ -7,5 +7,10 @@ public class Block {
 	public Block(char character){
 		this.character = character;
 	}
+
+	public char getCharacter() {
+		return character;
+	}
+	
 	
 }

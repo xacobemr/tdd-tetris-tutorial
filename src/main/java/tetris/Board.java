@@ -30,13 +30,13 @@ public class Board {
     }
     
     //Escoge que carácter concatenar
-    private String printearCaracter(int col, int row, Block block, int tickCont){
+    private char printearCaracter(int col, int row, Block block, int tickCont){
     	if(row == 0 && col == 1 && this.block != null && tickCont == 0){
-    		return "X";
+    		return block.getCharacter();
     	}else if(row == 1 && col == 1 && tickCont == 1){
-    		return "X";
+    		return block.getCharacter();
     	}else{
-    		return ".";
+    		return '.';
     	}
     }
     
@@ -54,7 +54,11 @@ public class Board {
     }
     
     public void drop(Block block){
-    	this.block = block;
+    	if(block.getCharacter() == 'Y'){
+    		throw new IllegalStateException("already falling");
+    	}else{
+    		this.block = block;
+    	}
     }
     
     
