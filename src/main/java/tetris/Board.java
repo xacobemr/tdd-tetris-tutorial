@@ -14,14 +14,18 @@ public class Board {
         this.rows = rows;
         this.columns = columns;
     }
-
+    
     public String toString() {
         String s = "";
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
-                s += "";
+            	if(row == 0 && col == 1 && this.block != null){
+            		s += "X";
+            	}else{
+            		s += ".";
+            	}
             }
-            s += "...\n";
+            s += "\n";
         }
         return s;
     }
