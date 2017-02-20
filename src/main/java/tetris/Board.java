@@ -35,7 +35,7 @@ public class Board {
     		return block.getCharacter();
     	}else if(row == 1 && col == 1 && tickCont == 1){
     		return block.getCharacter();
-    	}else if(row == 2 && col == 1 && tickCont == 2){
+    	}else if(row == 2 && col == 1 && (tickCont == 2 || tickCont == 3)){
     		return block.getCharacter();
     	}else{
     		return '.';
@@ -48,7 +48,7 @@ public class Board {
     }
     
     public Boolean hasFalling() {
-    	if(this.block == null){
+    	if(this.block == null || tickCont >= 3){
     		return false;
     	}else{
     		return true;
