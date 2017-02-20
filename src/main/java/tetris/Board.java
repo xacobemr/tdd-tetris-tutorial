@@ -35,6 +35,8 @@ public class Board {
     		return block.getCharacter();
     	}else if(row == 1 && col == 1 && tickCont == 1){
     		return block.getCharacter();
+    	}else if(row == 2 && col == 1 && tickCont == 2){
+    		return block.getCharacter();
     	}else{
     		return '.';
     	}

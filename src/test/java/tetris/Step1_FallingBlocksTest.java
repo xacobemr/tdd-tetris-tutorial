@@ -79,7 +79,7 @@ public class Step1_FallingBlocksTest extends Assert {
     }
 
 
-/*
+
     public class When_a_block_reaches_the_bottom {
 
         @Before
@@ -108,7 +108,7 @@ public class Step1_FallingBlocksTest extends Assert {
 //            assertFalse("the block should stop moving", board.hasFalling());
 //        }
     }
-*/
+
 
 /*
     public class When_a_block_lands_on_another_block {
