@@ -59,7 +59,7 @@ public class Board {
     //Aumenta el contador de tick
     public void tick(){
     	this.rowCont ++;
-    	if(this.rowCont == rows){
+    	if((this.rowCont == rows) || (this.tablero[rowCont][colCont] != null)){
     		this.tablero[rowCont-1][colCont] = block;
     		this.block = null;
     	}
