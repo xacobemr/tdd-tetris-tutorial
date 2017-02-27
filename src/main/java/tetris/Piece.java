@@ -59,5 +59,17 @@ public class Piece {
         return new Piece(resTab);
     }
     
+    public Piece rotateLeft() {
+    	Block[][] traspuestoTab = trasTab(tablero);
+        Block[][] resTab = new Block[traspuestoTab.length][traspuestoTab[0].length];
+        
+        for(int i=0; i<traspuestoTab.length; i++){
+            for(int j=0; j<traspuestoTab[i].length; j++){
+            	resTab[i][j] = traspuestoTab[traspuestoTab.length-i-1][j];
+            }
+        }
+        return new Piece(resTab);
+    }
+    
 	
 }
