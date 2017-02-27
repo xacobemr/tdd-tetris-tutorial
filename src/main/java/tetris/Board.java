@@ -36,18 +36,9 @@ public class Board {
     //Escoge que carácter concatenar
     private char printearCaracter(int col, int row, Block block, Block tab[][], int rowCont){
     	if((block != null) && (row == rowCont) && (col == colCont)){
-//	    	if(row == 0 && col == 1 && block != null && tickCont == 0){
-//	    		return block.getCharacter();
-//	    	}else if(row == 1 && col == 1 && tickCont == 1){
-//	    		return block.getCharacter();
-//	    	}else if(row == 2 && col == 1 && (tickCont == 2 || tickCont == 3)){
-//	    		return block.getCharacter();
-//	    	}else{
-//	    		return '.';
-//	    	}
     		return block.getCharacter();
     	}else{
-    		if (tab[row][col] != null) {
+    		if(tab[row][col] != null) {
                 return tab[row][col].getCharacter();
             } else {
             	return '.';
