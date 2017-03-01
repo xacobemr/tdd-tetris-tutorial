@@ -17,8 +17,9 @@ public class Tetromino {
 		return newTetr;
 	}
 	
-	public void rotateLeft(){
-		
+	public Tetromino rotateLeft(){
+		Tetromino newTetr = new Tetromino(piece.rotateLeft());
+		return newTetr;
 	}
 	
 	public String toString(){
