@@ -17,6 +17,10 @@ public class Tetromino {
 	  		  												  "....\n" +
 	  		  												  "...."));
 	
+	public static Tetromino O_SHAPE = new Tetromino(new Piece(".OO\n" +
+				  											  ".OO\n" +
+				  											  "..."));
+	
 	public Tetromino rotateRight(){
 		Tetromino newTetr = new Tetromino(piece.rotateRight());
 		return newTetr;
