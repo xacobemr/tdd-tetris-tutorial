@@ -20,4 +20,8 @@ public class Tetromino {
 		
 	}
 	
+	public String toString(){
+		return piece.toString();
+	}
+	
 }
