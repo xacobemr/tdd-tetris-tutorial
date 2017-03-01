@@ -257,14 +257,14 @@ public class Step3_RotatingTetrominoesTest extends Assert {
                 "...\n", shape.toString());
     }
 
-//    @Test
-//    public void rotating_it_four_times_will_get_back_to_the_original_shape() {
-//        String originalShape = shape.toString();
-//        shape = shape.rotateRight().rotateRight().rotateRight().rotateRight();
-//        assertEquals(originalShape, shape.toString());
-//        shape = shape.rotateLeft().rotateLeft().rotateLeft().rotateLeft();
-//        assertEquals(originalShape, shape.toString());
-//    }
+    @Test
+    public void rotating_it_four_times_will_get_back_to_the_original_shape() {
+        String originalShape = shape.toString();
+        shape = shape.rotateRight().rotateRight().rotateRight().rotateRight();
+        assertEquals(originalShape, shape.toString());
+        shape = shape.rotateLeft().rotateLeft().rotateLeft().rotateLeft();
+        assertEquals(originalShape, shape.toString());
+    }
 
 //    @Test
 //    public void rotating_it_twice_right_or_left_is_equivalent() {
