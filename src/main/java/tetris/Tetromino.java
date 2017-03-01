@@ -1,6 +1,6 @@
 package tetris;
 
-public class Tetromino {
+public class Tetromino implements GenericPiece{
 
 	private Piece piece;
 	

@@ -1,6 +1,6 @@
 package tetris;
 
-public class Block {
+public class Block implements GenericPiece{
 
 	private char character;
 	
@@ -8,8 +8,9 @@ public class Block {
 		this.character = character;
 	}
 
-	public char getCharacter() {
-		return character;
+	public String toString() {
+		
+		return String.valueOf(character);
 	}
 	
 	

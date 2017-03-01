@@ -1,6 +1,6 @@
 package tetris;
 
-public class Piece {
+public class Piece implements GenericPiece{
 
 	private Block tablero[][];
 	
@@ -28,7 +28,7 @@ public class Piece {
         if(tablero != null){
             for(int i=0; i<tablero.length; i++){
                 for(int j=0; j<tablero[i].length; j++){
-                    s += tablero[i][j].getCharacter();
+                    s += tablero[i][j].toString();
                 }
             s += "\n";
             }

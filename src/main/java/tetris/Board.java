@@ -8,8 +8,8 @@ public class Board {
 
     private final int rows;
     private final int columns;
-    private Block block;
-    private Block tablero[][];
+    private GenericPiece block;
+    private GenericPiece tablero[][];
     private int rowCont = 0;
     private int colCont = 1;
 
@@ -34,14 +34,14 @@ public class Board {
     }
     
     //Escoge que carácter concatenar
-    private char printearCaracter(int col, int row, Block block, Block tab[][], int rowCont){
+    private String printearCaracter(int col, int row, GenericPiece block, GenericPiece tab[][], int rowCont){
     	if((block != null) && (row == rowCont) && (col == colCont)){
-    		return block.getCharacter();
+    		return block.toString();
     	}else{
     		if(tab[row][col] != null) {
-                return tab[row][col].getCharacter();
+                return tab[row][col].toString();
             } else {
-            	return '.';
+            	return ".";
             }
     		
     	}
@@ -67,7 +67,7 @@ public class Board {
     }
     
     //Inserta un nuevo bloque
-    public void drop(Block b) throws IllegalStateException{
+    public void drop(GenericPiece b) throws IllegalStateException{
     	if(this.block != null){
     		throw new IllegalStateException("already falling");
     	}else{
