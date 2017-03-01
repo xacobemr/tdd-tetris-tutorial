@@ -120,33 +120,33 @@ public class Step3_RotatingTetrominoesTest extends Assert {
                 "....\n", shape.toString());
      }
 
-//    @Test
-//    public void can_be_rotated_right_four_times() {
-//        shape = shape.rotateRight();
-//        assertEquals("" +
-//               "..I.\n" +
-//               "..I.\n" +
-//               "..I.\n" +
-//               "..I.\n", shape.toString());
-//        shape = shape.rotateRight();
-//        assertEquals("" +
-//               "....\n" +
-//               "....\n" +
-//               "IIII\n" +
-//               "....\n", shape.toString());
-//        shape = shape.rotateRight();
-//        assertEquals("" +
-//               ".I..\n" +
-//               ".I..\n" +
-//               ".I..\n" +
-//               ".I..\n", shape.toString());
-//        shape = shape.rotateRight();
-//        assertEquals("" +
-//               "....\n" +
-//               "IIII\n" +
-//               "....\n" +
-//               "....\n", shape.toString());
-//    }
+    @Test
+    public void can_be_rotated_right_four_times() {
+        shape = shape.rotateRight();
+        assertEquals("" +
+               "..I.\n" +
+               "..I.\n" +
+               "..I.\n" +
+               "..I.\n", shape.toString());
+        shape = shape.rotateRight();
+        assertEquals("" +
+               "....\n" +
+               "....\n" +
+               "IIII\n" +
+               "....\n", shape.toString());
+        shape = shape.rotateRight();
+        assertEquals("" +
+               ".I..\n" +
+               ".I..\n" +
+               ".I..\n" +
+               ".I..\n", shape.toString());
+        shape = shape.rotateRight();
+        assertEquals("" +
+               "....\n" +
+               "IIII\n" +
+               "....\n" +
+               "....\n", shape.toString());
+    }
 
 //    @Test
 //    public void can_be_rotated_left_four_times() {
