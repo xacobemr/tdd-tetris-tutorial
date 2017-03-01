@@ -12,8 +12,9 @@ public class Tetromino {
 													  		  "TTT\n" +
 													  		  "..."));
 	
-	public void rotateRight(){
-		
+	public Tetromino rotateRight(){
+		Tetromino newTetr = new Tetromino(piece.rotateRight());
+		return newTetr;
 	}
 	
 	public void rotateLeft(){
