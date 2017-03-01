@@ -12,6 +12,11 @@ public class Tetromino {
 													  		  "TTT\n" +
 													  		  "..."));
 	
+	public static Tetromino I_SHAPE = new Tetromino(new Piece("....\n" +
+	  		  												  "IIII\n" +
+	  		  												  "....\n" +
+	  		  												  "...."));
+	
 	public Tetromino rotateRight(){
 		Tetromino newTetr = new Tetromino(piece.rotateRight());
 		return newTetr;
