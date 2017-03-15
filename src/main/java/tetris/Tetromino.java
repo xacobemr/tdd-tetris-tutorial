@@ -21,6 +21,18 @@ public class Tetromino implements GenericPiece{
 				  											  ".OO\n" +
 				  											  "..."));
 	
+	public int width() {
+        return piece.width();
+    }
+
+    public int height() {
+        return piece.height();
+    }
+    
+    public boolean is_hollow_at(int i, int j) {
+        return piece.is_hollow_at(i, j);
+    }
+	
 	public Tetromino rotateRight(){
 		Tetromino newTetr = new Tetromino(piece.rotateRight());
 		return newTetr;

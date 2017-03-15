@@ -21,6 +21,18 @@ public class Piece implements GenericPiece{
 	public Piece(Block tablero[][]){
         this.tablero = tablero;
     }
+	
+	public int width() {
+        return tablero[0].length;
+    }
+
+    public int height() {
+        return tablero.length;
+    }
+    
+    public boolean is_hollow_at(int i, int j) {
+        return tablero[i][j].toString().equals(String.valueOf(GenericPiece.EMPTY));
+    }
 
     public String toString(){
         String s = "";
