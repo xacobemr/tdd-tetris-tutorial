@@ -163,4 +163,10 @@ public class Board {
         }
     }
     
+    public void move_Left(){
+    	
+    	colCont --;
+    	
+    }
+    
 }
