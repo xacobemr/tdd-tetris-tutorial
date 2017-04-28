@@ -17,10 +17,12 @@ public class Step5_MovingAFallingPieceTest extends Assert {
     // - The test names have been provided, you just need to fill in the test body
     // - Next step: RotatingAFallingPieceTest
 
-	private final Board board = new Board(6, 8);
+	
 	
 	
 	public class A_falling_piece{
+		
+		private final Board board = new Board(6, 8);
 		
 		@Before
 		public void dropPiece(){
@@ -131,10 +133,42 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 	    }
 	    
 	}
-	    // TODO: it cannot be moved left if another piece is in the way
+	
+	public class It_cannot_be_moved{
+		
+		private final Board board = new Board("" +
+		           "X......X\n" +
+		           "X......X\n" +
+		           "X......X\n" +
+		           "X......X\n" +
+		           "X......X\n" +
+		           "XXXXXXXX\n");
+		
+		@Before
+		public void dropPiece(){
+			board.drop(Tetromino.T_SHAPE);
+		}
+			
+		// TODO: it cannot be moved left if another piece is in the way
+		@Test
+		public void it_cannot_be_moved_left_if_another_piece_is_in_the_way(){
+			for(int i=0; i<=10; i++){
+				board.move_Left();
+			}
+			
+			assertEquals("" +
+			           "X.T....X\n" +
+			           "XTTT...X\n" +
+			           "X......X\n" +
+			           "X......X\n" +
+			           "X......X\n" +
+			           "XXXXXXXX\n", board.toString());
+		}
+	
+	    
 	    // TODO: it cannot be moved right if another piece is in the way
 	    // TODO: it cannot be moved down if another piece is in the way (will stop falling)
-
+	}
     // P.S. Take into consideration, that part of the piece's area may be empty cells.
     // Only non-empty cells should take part in the collision checks.
 }

@@ -20,6 +20,20 @@ public class Board {
     	return this.colCont;
     }
 
+    public Board(String board){
+    	String[] rows = board.split("\n");
+    	this.rows = rows.length;
+    	this.columns = rows[0].length();
+    	this.tablero = new char[rows.length][rows[0].length()];
+    	for(int i=0; i<rows.length; i++){
+            char[] column = rows[i].toCharArray();
+            for(int j=0; j<column.length; j++){
+                tablero[i][j] = column[j];
+            }
+        }
+    	
+    }
+    
     public Board(int rows, int columns) {
         this.rows = rows;
         this.columns = columns;
@@ -140,7 +154,7 @@ public class Board {
     }
     
     public void move_Left(){
-    	if (colCont > 0){
+    	if (colCont > 0 && can_move_Left()){
     		colCont --;
     	}
     }
@@ -149,6 +163,10 @@ public class Board {
     	if ((colCont + block.width()) < columns){
     		colCont ++;
     	}
+    }
+    
+    private boolean can_move_Left(){
+    	return (tablero[rowCont][colCont-1] == '.');
     }
     
 }
