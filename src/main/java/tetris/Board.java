@@ -160,13 +160,17 @@ public class Board {
     }
     
     public void move_Right(){
-    	if ((colCont + block.width()) < columns){
+    	if ((colCont + block.width()) < columns && can_move_Right()){
     		colCont ++;
     	}
     }
     
     private boolean can_move_Left(){
     	return (tablero[rowCont][colCont-1] == '.');
+    }
+    
+    private boolean can_move_Right(){
+    	return (tablero[rowCont][colCont+block.width()] == '.');
     }
     
 }

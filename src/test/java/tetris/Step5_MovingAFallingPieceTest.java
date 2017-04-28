@@ -165,8 +165,22 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			           "XXXXXXXX\n", board.toString());
 		}
 	
-	    
 	    // TODO: it cannot be moved right if another piece is in the way
+		@Test
+		public void it_cannot_be_moved_right_if_another_piece_is_in_the_way(){
+			for(int i=0; i<=10; i++){
+				board.move_Right();
+			}
+			
+			assertEquals("" +
+			           "X....T.X\n" +
+			           "X...TTTX\n" +
+			           "X......X\n" +
+			           "X......X\n" +
+			           "X......X\n" +
+			           "XXXXXXXX\n", board.toString());
+		}
+		
 	    // TODO: it cannot be moved down if another piece is in the way (will stop falling)
 	}
     // P.S. Take into consideration, that part of the piece's area may be empty cells.
