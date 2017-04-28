@@ -165,12 +165,22 @@ public class Board {
     	}
     }
     
+    public void move_Down(){
+    	if ((rowCont + block.height()-1) < rows && can_move_Down()){
+    		rowCont ++;
+    	}
+    }
+    
     private boolean can_move_Left(){
     	return (tablero[rowCont][colCont-1] == '.');
     }
     
     private boolean can_move_Right(){
     	return (tablero[rowCont][colCont+block.width()] == '.');
+    }
+    
+    private boolean can_move_Down(){
+    	return (tablero[rowCont+block.height()][colCont] == '.');
     }
     
 }

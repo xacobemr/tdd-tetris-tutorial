@@ -21,6 +21,10 @@ public class Tetromino implements GenericPiece{
 				  											  ".OO\n" +
 				  											  "..."));
 	
+	public static Tetromino H_SHAPE = new Tetromino(new Piece(".H.\n" +
+	  		  												  "HHH\n" +
+	  		  												  ".H."));
+	
 	public int width() {
         return piece.width();
     }

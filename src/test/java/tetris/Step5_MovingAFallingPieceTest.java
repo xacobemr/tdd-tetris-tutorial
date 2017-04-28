@@ -26,7 +26,7 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 		
 		@Before
 		public void dropPiece(){
-			board.drop(Tetromino.T_SHAPE);
+			board.drop(Tetromino.H_SHAPE);
 		}
 		
 		// TODO: a falling piece can be moved left
@@ -36,9 +36,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			board.move_Left();
 				
 			assertEquals("" +
-		           "...T....\n" +
-		           "..TTT...\n" +
-		           "........\n" +
+		           "...H....\n" +
+		           "..HHH...\n" +
+		           "...H....\n" +
 		           "........\n" +
 		           "........\n" +
 		           "........\n", board.toString());
@@ -51,9 +51,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			board.move_Right();
 			
 			assertEquals("" +
-			           ".....T..\n" +
-			           "....TTT.\n" +
-			           "........\n" +
+			           ".....H..\n" +
+			           "....HHH.\n" +
+			           ".....H..\n" +
 			           "........\n" +
 			           "........\n" +
 			           "........\n", board.toString());
@@ -68,9 +68,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			
 			assertEquals("" +
 			           "........\n" +
-			           "....T...\n" +
-			           "...TTT..\n" +
-			           "........\n" +
+			           "....H...\n" +
+			           "...HHH..\n" +
+			           "....H...\n" +
 			           "........\n" +
 			           "........\n", board.toString());
 		}
@@ -85,9 +85,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			}
 			
 			assertEquals("" +
-			           ".T......\n" +
-			           "TTT.....\n" +
-			           "........\n" +
+			           ".H......\n" +
+			           "HHH.....\n" +
+			           ".H......\n" +
 			           "........\n" +
 			           "........\n" +
 			           "........\n", board.toString());
@@ -103,9 +103,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			}
 
 	    	assertEquals("" +
-			           "......T.\n" +
-			           ".....TTT\n" +
-			           "........\n" +
+			           "......H.\n" +
+			           ".....HHH\n" +
+			           "......H.\n" +
 			           "........\n" +
 			           "........\n" +
 			           "........\n", board.toString());
@@ -126,9 +126,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			           "........\n" +
 			           "........\n" +
 			           "........\n" +
-			           "........\n" +
-			           "....T...\n" +
-			           "...TTT..\n", board.toString());
+			           "....H...\n" +
+			           "...HHH..\n" +
+			           "....H...\n", board.toString());
 	    	
 	    }
 	    
@@ -146,7 +146,7 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 		
 		@Before
 		public void dropPiece(){
-			board.drop(Tetromino.T_SHAPE);
+			board.drop(Tetromino.H_SHAPE);
 		}
 			
 		// TODO: it cannot be moved left if another piece is in the way
@@ -157,9 +157,9 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			}
 			
 			assertEquals("" +
-			           "X.T....X\n" +
-			           "XTTT...X\n" +
-			           "X......X\n" +
+			           "X.H....X\n" +
+			           "XHHH...X\n" +
+			           "X.H....X\n" +
 			           "X......X\n" +
 			           "X......X\n" +
 			           "XXXXXXXX\n", board.toString());
@@ -173,15 +173,30 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			}
 			
 			assertEquals("" +
-			           "X....T.X\n" +
-			           "X...TTTX\n" +
-			           "X......X\n" +
+			           "X....H.X\n" +
+			           "X...HHHX\n" +
+			           "X....H.X\n" +
 			           "X......X\n" +
 			           "X......X\n" +
 			           "XXXXXXXX\n", board.toString());
 		}
 		
 	    // TODO: it cannot be moved down if another piece is in the way (will stop falling)
+		@Test
+		public void it_cannot_be_moved_down_if_another_piece_is_in_the_way(){
+			for(int i=0; i<=10; i++){
+				board.move_Down();
+			}
+			
+			assertEquals("" +
+			           "X......X\n" +
+			           "X......X\n" +
+			           "X...H..X\n" +
+			           "X..HHH.X\n" +
+			           "X...H..X\n" +
+			           "XXXXXXXX\n", board.toString());
+		}
+		
 	}
     // P.S. Take into consideration, that part of the piece's area may be empty cells.
     // Only non-empty cells should take part in the collision checks.
