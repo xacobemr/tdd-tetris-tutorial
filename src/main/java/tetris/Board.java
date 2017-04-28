@@ -15,6 +15,10 @@ public class Board {
     private int rowCont;
     private int colCont;
     private boolean last_tick;
+    
+    public int getColCont(){
+    	return this.colCont;
+    }
 
     public Board(int rows, int columns) {
         this.rows = rows;
@@ -142,7 +146,9 @@ public class Board {
     }
     
     public void move_Right(){
-    	colCont ++;
+    	if ((colCont + block.width()) < columns){
+    		colCont ++;
+    	}
     }
     
 }
