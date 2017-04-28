@@ -43,34 +43,6 @@ public class Board {
         return s;
     }
     
-//    //Construye el tablero
-//    public String toString() {
-//        String s = "";
-//        
-//        for (int row = 0; row < rows; row++) {
-//            for (int col = 0; col < columns; col++) {
-//            	s += printearCaracter(col, row, this.block, this.tablero, this.rowCont);
-//            }
-//            s += "\n";
-//        }
-//        return s;
-//    }
-    
-    //Escoge que carácter concatenar
-//    private String printearCaracter(int col, int row, GenericPiece block, char tab[][], int rowCont){
-//    	if((block != null) && (row == rowCont) && (col == colCont)){
-//    		return block.toString();
-//    	}else{
-//    		if(tab[row][col] != null) {
-//                return tab[row][col].toString();
-//            } else {
-//            	return ".";
-//            }
-//    		
-//    	}
-//    	
-//    }
-    
     //Aumenta el contador de tick
     public void tick() {
         if (block != null) {
@@ -164,7 +136,9 @@ public class Board {
     }
     
     public void move_Left(){
-    	colCont --;
+    	if (colCont > 0){
+    		colCont --;
+    	}
     }
     
     public void move_Right(){
