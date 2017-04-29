@@ -15,10 +15,7 @@ public class Board {
     private int rowCont;
     private int colCont;
     private boolean last_tick;
-    
-    public int getColCont(){
-    	return this.colCont;
-    }
+ 
 
     public Board(String board){
     	String[] rows = board.split("\n");
