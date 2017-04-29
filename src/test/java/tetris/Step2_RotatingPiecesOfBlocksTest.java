@@ -24,7 +24,7 @@ public class Step2_RotatingPiecesOfBlocksTest extends Assert {
     private Piece piece;
 
 
-    public class A_piece_of_3x3_blocks {
+    //public class A_piece_of_3x3_blocks {
 
         @Before
         public void createPiece() {
@@ -59,15 +59,17 @@ public class Step2_RotatingPiecesOfBlocksTest extends Assert {
                     "XX.\n" +
                     "...\n", piece.toString());
         }
-    }
+    //}
 
 
 
-    public class A_piece_of_5x5_blocks {
-
+    //public class A_piece_of_5x5_blocks {
+        private Piece piece1;
+        
+        
         @Before
-        public void createPiece() {
-            piece = new Piece("" +
+        public void createPiece1() {
+            piece1 = new Piece("" +
                     "..XXX\n" +
                     "..XX.\n" +
                     "..X..\n" +
@@ -76,36 +78,36 @@ public class Step2_RotatingPiecesOfBlocksTest extends Assert {
         }
 
         @Test
-        public void consists_of_many_blocks() {
+        public void consists_of_many_blocks1() {
             assertEquals("" +
                     "..XXX\n" +
                     "..XX.\n" +
                     "..X..\n" +
                     ".....\n" +
-                    ".....\n", piece.toString());
+                    ".....\n", piece1.toString());
         }
 
         @Test
-        public void can_be_rotated_right() {
-            piece = piece.rotateRight();
+        public void can_be_rotated_right1() {
+            piece1 = piece1.rotateRight();
             assertEquals("" +
                     ".....\n" +
                     ".....\n" +
                     "..XXX\n" +
                     "...XX\n" +
-                    "....X\n", piece.toString());
+                    "....X\n", piece1.toString());
         }
 
         @Test
-        public void can_be_rotated_left() {
-            piece = piece.rotateLeft();
+        public void can_be_rotated_left1() {
+            piece1 = piece1.rotateLeft();
             assertEquals("" +
                     "X....\n" +
                     "XX...\n" +
                     "XXX..\n" +
                     ".....\n" +
-                    ".....\n", piece.toString());
+                    ".....\n", piece1.toString());
         }
-    }
+    //}
 
 }

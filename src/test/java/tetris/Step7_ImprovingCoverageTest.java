@@ -4,7 +4,6 @@ import org.junit.runner.RunWith;
 
 import net.orfjackal.nestedjunit.NestedJUnit;
 import org.junit.*;
-import org.junit.runner.RunWith;
 
 @RunWith(NestedJUnit.class)
 public class Step7_ImprovingCoverageTest extends Assert{

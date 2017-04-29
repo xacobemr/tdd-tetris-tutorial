@@ -20,7 +20,7 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 	
 	
 	
-	public class A_falling_piece{
+	//public class A_falling_piece{
 		
 		private final Board board = new Board(6, 8);
 		
@@ -132,11 +132,11 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 	    	
 	    }
 	    
-	}
+	//}
 	
-	public class It_cannot_be_moved{
+	//public class It_cannot_be_moved{
 		
-		private final Board board = new Board("" +
+		private final Board board1 = new Board("" +
 		           "X......X\n" +
 		           "X......X\n" +
 		           "X......X\n" +
@@ -145,15 +145,15 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 		           "XXXXXXXX\n");
 		
 		@Before
-		public void dropPiece(){
-			board.drop(Tetromino.H_SHAPE);
+		public void dropPiece1(){
+			board1.drop(Tetromino.H_SHAPE);
 		}
 			
 		// TODO: it cannot be moved left if another piece is in the way
 		@Test
 		public void it_cannot_be_moved_left_if_another_piece_is_in_the_way(){
 			for(int i=0; i<=10; i++){
-				board.move_Left();
+				board1.move_Left();
 			}
 			
 			assertEquals("" +
@@ -162,14 +162,14 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			           "X.H....X\n" +
 			           "X......X\n" +
 			           "X......X\n" +
-			           "XXXXXXXX\n", board.toString());
+			           "XXXXXXXX\n", board1.toString());
 		}
 	
 	    // TODO: it cannot be moved right if another piece is in the way
 		@Test
 		public void it_cannot_be_moved_right_if_another_piece_is_in_the_way(){
 			for(int i=0; i<=10; i++){
-				board.move_Right();
+				board1.move_Right();
 			}
 			
 			assertEquals("" +
@@ -178,14 +178,14 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			           "X....H.X\n" +
 			           "X......X\n" +
 			           "X......X\n" +
-			           "XXXXXXXX\n", board.toString());
+			           "XXXXXXXX\n", board1.toString());
 		}
 		
 	    // TODO: it cannot be moved down if another piece is in the way (will stop falling)
 		@Test
 		public void it_cannot_be_moved_down_if_another_piece_is_in_the_way(){
 			for(int i=0; i<=10; i++){
-				board.move_Down();
+				board1.move_Down();
 			}
 			
 			assertEquals("" +
@@ -194,10 +194,10 @@ public class Step5_MovingAFallingPieceTest extends Assert {
 			           "X...H..X\n" +
 			           "X..HHH.X\n" +
 			           "X...H..X\n" +
-			           "XXXXXXXX\n", board.toString());
+			           "XXXXXXXX\n", board1.toString());
 		}
 		
-	}
+	//}
     // P.S. Take into consideration, that part of the piece's area may be empty cells.
     // Only non-empty cells should take part in the collision checks.
 }

@@ -163,7 +163,7 @@ public class Board {
     }
     
     public void move_Down(){
-    	if ((rowCont + block.height()-1) < rows && can_move_Down()){
+    	if ((rowCont + block.height()) < rows && can_move_Down()){
     		rowCont ++;
     	}
     }
