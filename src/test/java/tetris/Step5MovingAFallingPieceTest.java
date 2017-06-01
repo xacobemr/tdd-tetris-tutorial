@@ -29,6 +29,7 @@ public class Step5MovingAFallingPieceTest extends Assert {
     board.drop(Tetromino.H_SHAPE);
   }
 
+  
   // TODO: a falling piece can be moved left
   @Test
   public void a_falling_piece_can_be_moved_left() {
