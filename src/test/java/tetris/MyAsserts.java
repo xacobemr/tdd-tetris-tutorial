@@ -8,20 +8,43 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.instanceOf;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MyAsserts.
+ */
 public class MyAsserts {
 
-    public static void assertThrows(Class<?> expectedException, String expectedMessage, Command command) {
-        try {
-            command.run();
-        } catch (Throwable t) {
-            assertThat("thrown exception", t, instanceOf(expectedException));
-            assertThat("exception message", t.getMessage(), containsString(expectedMessage));
-            return;
-        }
-        throw new AssertionError("Expected to throw " + expectedException.getName() + ", but did not throw anything");
+  /**
+   * Assert throws.
+   *
+   * @param expectedException the expected exception
+   * @param expectedMessage the expected message
+   * @param command the command
+   */
+  public static void assertThrows(Class<?> expectedException, 
+         String expectedMessage, Command command) {
+    try {
+      command.run();
+    } catch (Throwable t) {
+      assertThat("thrown exception", t, instanceOf(expectedException));
+      assertThat("exception message", t.getMessage(), containsString(expectedMessage));
+      return;
     }
+    throw new AssertionError("Expected to throw " 
+    + 
+    expectedException.getName() + ", but did not throw anything");
+  }
 
-    public interface Command {
-        void run() throws Throwable;
-    }
+  /**
+   * The Interface Command.
+   */
+  public interface Command {
+    
+    /**
+     * Run.
+     *
+     * @throws Throwable the throwable
+     */
+    void run() throws Throwable;
+  }
 }
